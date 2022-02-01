@@ -9,8 +9,7 @@ class ContentfulPostResponse with _$ContentfulPostResponse {
   const ContentfulPostResponse._();
 
   const factory ContentfulPostResponse({
-    required int total,
-    required List<ContentfulPostResponseField> items,
+    required ContentfulPostResponseField fields,
   }) = _ContentfulPostResponse;
 
   factory ContentfulPostResponse.fromJson(Map<String, dynamic> json) =>

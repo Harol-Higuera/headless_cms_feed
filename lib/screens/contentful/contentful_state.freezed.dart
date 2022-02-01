@@ -18,9 +18,9 @@ final _privateConstructorUsedError = UnsupportedError(
 class _$ContentfulStateTearOff {
   const _$ContentfulStateTearOff();
 
-  _ContentfulState call({ContentfulPostResponse? response}) {
+  _ContentfulState call({List<ContentfulPostResponse>? list}) {
     return _ContentfulState(
-      response: response,
+      list: list,
     );
   }
 }
@@ -30,7 +30,7 @@ const $ContentfulState = _$ContentfulStateTearOff();
 
 /// @nodoc
 mixin _$ContentfulState {
-  ContentfulPostResponse? get response => throw _privateConstructorUsedError;
+  List<ContentfulPostResponse>? get list => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $ContentfulStateCopyWith<ContentfulState> get copyWith =>
@@ -42,9 +42,7 @@ abstract class $ContentfulStateCopyWith<$Res> {
   factory $ContentfulStateCopyWith(
           ContentfulState value, $Res Function(ContentfulState) then) =
       _$ContentfulStateCopyWithImpl<$Res>;
-  $Res call({ContentfulPostResponse? response});
-
-  $ContentfulPostResponseCopyWith<$Res>? get response;
+  $Res call({List<ContentfulPostResponse>? list});
 }
 
 /// @nodoc
@@ -58,25 +56,14 @@ class _$ContentfulStateCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? response = freezed,
+    Object? list = freezed,
   }) {
     return _then(_value.copyWith(
-      response: response == freezed
-          ? _value.response
-          : response // ignore: cast_nullable_to_non_nullable
-              as ContentfulPostResponse?,
+      list: list == freezed
+          ? _value.list
+          : list // ignore: cast_nullable_to_non_nullable
+              as List<ContentfulPostResponse>?,
     ));
-  }
-
-  @override
-  $ContentfulPostResponseCopyWith<$Res>? get response {
-    if (_value.response == null) {
-      return null;
-    }
-
-    return $ContentfulPostResponseCopyWith<$Res>(_value.response!, (value) {
-      return _then(_value.copyWith(response: value));
-    });
   }
 }
 
@@ -87,10 +74,7 @@ abstract class _$ContentfulStateCopyWith<$Res>
           _ContentfulState value, $Res Function(_ContentfulState) then) =
       __$ContentfulStateCopyWithImpl<$Res>;
   @override
-  $Res call({ContentfulPostResponse? response});
-
-  @override
-  $ContentfulPostResponseCopyWith<$Res>? get response;
+  $Res call({List<ContentfulPostResponse>? list});
 }
 
 /// @nodoc
@@ -106,13 +90,13 @@ class __$ContentfulStateCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? response = freezed,
+    Object? list = freezed,
   }) {
     return _then(_ContentfulState(
-      response: response == freezed
-          ? _value.response
-          : response // ignore: cast_nullable_to_non_nullable
-              as ContentfulPostResponse?,
+      list: list == freezed
+          ? _value.list
+          : list // ignore: cast_nullable_to_non_nullable
+              as List<ContentfulPostResponse>?,
     ));
   }
 }
@@ -120,14 +104,14 @@ class __$ContentfulStateCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_ContentfulState extends _ContentfulState {
-  _$_ContentfulState({this.response}) : super._();
+  _$_ContentfulState({this.list}) : super._();
 
   @override
-  final ContentfulPostResponse? response;
+  final List<ContentfulPostResponse>? list;
 
   @override
   String toString() {
-    return 'ContentfulState(response: $response)';
+    return 'ContentfulState(list: $list)';
   }
 
   @override
@@ -135,12 +119,12 @@ class _$_ContentfulState extends _ContentfulState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _ContentfulState &&
-            const DeepCollectionEquality().equals(other.response, response));
+            const DeepCollectionEquality().equals(other.list, list));
   }
 
   @override
   int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(response));
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(list));
 
   @JsonKey(ignore: true)
   @override
@@ -149,12 +133,12 @@ class _$_ContentfulState extends _ContentfulState {
 }
 
 abstract class _ContentfulState extends ContentfulState {
-  factory _ContentfulState({ContentfulPostResponse? response}) =
+  factory _ContentfulState({List<ContentfulPostResponse>? list}) =
       _$_ContentfulState;
   _ContentfulState._() : super._();
 
   @override
-  ContentfulPostResponse? get response;
+  List<ContentfulPostResponse>? get list;
   @override
   @JsonKey(ignore: true)
   _$ContentfulStateCopyWith<_ContentfulState> get copyWith =>

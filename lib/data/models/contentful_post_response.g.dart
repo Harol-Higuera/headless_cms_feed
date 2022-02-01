@@ -9,18 +9,14 @@ part of 'contentful_post_response.dart';
 _$_ContentfulPostResponse _$$_ContentfulPostResponseFromJson(
         Map<String, dynamic> json) =>
     _$_ContentfulPostResponse(
-      total: json['total'] as int,
-      items: (json['items'] as List<dynamic>)
-          .map((e) =>
-              ContentfulPostResponseField.fromJson(e as Map<String, dynamic>))
-          .toList(),
+      fields: ContentfulPostResponseField.fromJson(
+          json['fields'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$$_ContentfulPostResponseToJson(
         _$_ContentfulPostResponse instance) =>
     <String, dynamic>{
-      'total': instance.total,
-      'items': instance.items,
+      'fields': instance.fields,
     };
 
 _$_ContentfulPostResponseField _$$_ContentfulPostResponseFieldFromJson(

@@ -8,6 +8,6 @@ class ContentfulState with _$ContentfulState {
   const ContentfulState._();
 
   factory ContentfulState({
-    ContentfulPostResponse? response,
+    List<ContentfulPostResponse>? list,
   }) = _ContentfulState;
 }

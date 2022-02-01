@@ -23,11 +23,9 @@ ContentfulPostResponse _$ContentfulPostResponseFromJson(
 class _$ContentfulPostResponseTearOff {
   const _$ContentfulPostResponseTearOff();
 
-  _ContentfulPostResponse call(
-      {required int total, required List<ContentfulPostResponseField> items}) {
+  _ContentfulPostResponse call({required ContentfulPostResponseField fields}) {
     return _ContentfulPostResponse(
-      total: total,
-      items: items,
+      fields: fields,
     );
   }
 
@@ -41,9 +39,7 @@ const $ContentfulPostResponse = _$ContentfulPostResponseTearOff();
 
 /// @nodoc
 mixin _$ContentfulPostResponse {
-  int get total => throw _privateConstructorUsedError;
-  List<ContentfulPostResponseField> get items =>
-      throw _privateConstructorUsedError;
+  ContentfulPostResponseField get fields => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -56,7 +52,9 @@ abstract class $ContentfulPostResponseCopyWith<$Res> {
   factory $ContentfulPostResponseCopyWith(ContentfulPostResponse value,
           $Res Function(ContentfulPostResponse) then) =
       _$ContentfulPostResponseCopyWithImpl<$Res>;
-  $Res call({int total, List<ContentfulPostResponseField> items});
+  $Res call({ContentfulPostResponseField fields});
+
+  $ContentfulPostResponseFieldCopyWith<$Res> get fields;
 }
 
 /// @nodoc
@@ -70,19 +68,21 @@ class _$ContentfulPostResponseCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? total = freezed,
-    Object? items = freezed,
+    Object? fields = freezed,
   }) {
     return _then(_value.copyWith(
-      total: total == freezed
-          ? _value.total
-          : total // ignore: cast_nullable_to_non_nullable
-              as int,
-      items: items == freezed
-          ? _value.items
-          : items // ignore: cast_nullable_to_non_nullable
-              as List<ContentfulPostResponseField>,
+      fields: fields == freezed
+          ? _value.fields
+          : fields // ignore: cast_nullable_to_non_nullable
+              as ContentfulPostResponseField,
     ));
+  }
+
+  @override
+  $ContentfulPostResponseFieldCopyWith<$Res> get fields {
+    return $ContentfulPostResponseFieldCopyWith<$Res>(_value.fields, (value) {
+      return _then(_value.copyWith(fields: value));
+    });
   }
 }
 
@@ -93,7 +93,10 @@ abstract class _$ContentfulPostResponseCopyWith<$Res>
           $Res Function(_ContentfulPostResponse) then) =
       __$ContentfulPostResponseCopyWithImpl<$Res>;
   @override
-  $Res call({int total, List<ContentfulPostResponseField> items});
+  $Res call({ContentfulPostResponseField fields});
+
+  @override
+  $ContentfulPostResponseFieldCopyWith<$Res> get fields;
 }
 
 /// @nodoc
@@ -109,18 +112,13 @@ class __$ContentfulPostResponseCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? total = freezed,
-    Object? items = freezed,
+    Object? fields = freezed,
   }) {
     return _then(_ContentfulPostResponse(
-      total: total == freezed
-          ? _value.total
-          : total // ignore: cast_nullable_to_non_nullable
-              as int,
-      items: items == freezed
-          ? _value.items
-          : items // ignore: cast_nullable_to_non_nullable
-              as List<ContentfulPostResponseField>,
+      fields: fields == freezed
+          ? _value.fields
+          : fields // ignore: cast_nullable_to_non_nullable
+              as ContentfulPostResponseField,
     ));
   }
 }
@@ -128,20 +126,17 @@ class __$ContentfulPostResponseCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_ContentfulPostResponse extends _ContentfulPostResponse {
-  const _$_ContentfulPostResponse({required this.total, required this.items})
-      : super._();
+  const _$_ContentfulPostResponse({required this.fields}) : super._();
 
   factory _$_ContentfulPostResponse.fromJson(Map<String, dynamic> json) =>
       _$$_ContentfulPostResponseFromJson(json);
 
   @override
-  final int total;
-  @override
-  final List<ContentfulPostResponseField> items;
+  final ContentfulPostResponseField fields;
 
   @override
   String toString() {
-    return 'ContentfulPostResponse(total: $total, items: $items)';
+    return 'ContentfulPostResponse(fields: $fields)';
   }
 
   @override
@@ -149,15 +144,12 @@ class _$_ContentfulPostResponse extends _ContentfulPostResponse {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _ContentfulPostResponse &&
-            const DeepCollectionEquality().equals(other.total, total) &&
-            const DeepCollectionEquality().equals(other.items, items));
+            const DeepCollectionEquality().equals(other.fields, fields));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(total),
-      const DeepCollectionEquality().hash(items));
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(fields));
 
   @JsonKey(ignore: true)
   @override
@@ -173,8 +165,7 @@ class _$_ContentfulPostResponse extends _ContentfulPostResponse {
 
 abstract class _ContentfulPostResponse extends ContentfulPostResponse {
   const factory _ContentfulPostResponse(
-          {required int total,
-          required List<ContentfulPostResponseField> items}) =
+          {required ContentfulPostResponseField fields}) =
       _$_ContentfulPostResponse;
   const _ContentfulPostResponse._() : super._();
 
@@ -182,9 +173,7 @@ abstract class _ContentfulPostResponse extends ContentfulPostResponse {
       _$_ContentfulPostResponse.fromJson;
 
   @override
-  int get total;
-  @override
-  List<ContentfulPostResponseField> get items;
+  ContentfulPostResponseField get fields;
   @override
   @JsonKey(ignore: true)
   _$ContentfulPostResponseCopyWith<_ContentfulPostResponse> get copyWith =>

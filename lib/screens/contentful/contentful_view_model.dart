@@ -22,8 +22,13 @@ class ContentfulViewModel extends StateNotifier<ContentfulState> {
 
   void _init() async {
     final posts = await repository.getPosts();
-    state = state.copyWith(
-      response: posts,
-    );
+    posts.when(
+        (data) => {
+              state = state.copyWith(
+                list: data,
+              )
+            },
+        errorMessage: (error) {},
+        exception: (e) {});
   }
 }

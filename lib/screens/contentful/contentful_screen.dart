@@ -6,8 +6,8 @@ class ContentFulScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final state = ref.watch(contentfulProvider);
-    final response = state.response;
-    if (response == null) {
+    final list = state.list;
+    if (list == null) {
       return const Center(
         child: CircularProgressIndicator(),
       );
@@ -17,7 +17,7 @@ class ContentFulScreen extends ConsumerWidget {
       home: Scaffold(
         appBar: AppBar(title: const Text('Example')),
         body: Center(
-          child: Text(response.total.toString()),
+          child: Text(list.length.toString()),
         ),
       ),
     );
