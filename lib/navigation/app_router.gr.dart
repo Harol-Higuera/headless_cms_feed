@@ -13,7 +13,7 @@
 import 'package:auto_route/auto_route.dart' as _i2;
 import 'package:flutter/material.dart' as _i3;
 
-import '../screens/dialog_wise/conentful_screen.dart' as _i1;
+import '../screens/contentful/contentful_screen.dart' as _i1;
 
 class AppRouter extends _i2.RootStackRouter {
   AppRouter([_i3.GlobalKey<_i3.NavigatorState>? navigatorKey])
@@ -23,7 +23,7 @@ class AppRouter extends _i2.RootStackRouter {
   final Map<String, _i2.PageFactory> pagesMap = {
     ContentFulScreen.name: (routeData) {
       return _i2.MaterialPageX<dynamic>(
-          routeData: routeData, child: const _i1.ContentFulScreen());
+          routeData: routeData, child: _i1.ContentFulScreen());
     }
   };
 
