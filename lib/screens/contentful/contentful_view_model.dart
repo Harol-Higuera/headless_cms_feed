@@ -1,7 +1,7 @@
 import 'package:contentful/contentful.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:headless_cms_demo/data/repositories/contentful_post_repository.dart';
-import 'package:headless_cms_demo/screens/contentful/contentful_state.dart';
+import 'package:mldemo/data/repositories/contentful_post_repository.dart';
+import 'package:mldemo/screens/contentful/contentful_state.dart';
 
 final contentfulProvider =
     StateNotifierProvider.autoDispose<ContentfulViewModel, ContentfulState>(

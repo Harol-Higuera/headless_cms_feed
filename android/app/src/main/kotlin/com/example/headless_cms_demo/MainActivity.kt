@@ -1,4 +1,4 @@
-package com.example.headless_cms_demo
+package com.harol.mldemo
 
 import io.flutter.embedding.android.FlutterActivity
 

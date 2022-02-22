@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:headless_cms_demo/screens/contentful/contentful_view_model.dart';
+import 'package:mldemo/screens/contentful/contentful_view_model.dart';
 
 class ContentFulScreen extends StatelessWidget {
   const ContentFulScreen({Key? key}) : super(key: key);

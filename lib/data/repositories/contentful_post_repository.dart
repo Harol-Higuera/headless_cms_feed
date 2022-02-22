@@ -1,6 +1,6 @@
 import 'package:contentful/contentful.dart';
-import 'package:headless_cms_demo/data/models/api_result.dart';
-import 'package:headless_cms_demo/data/models/contentful_post_response.dart';
+import 'package:mldemo/data/models/api_result.dart';
+import 'package:mldemo/data/models/contentful_post_response.dart';
 
 const contentType = 'posts';
 

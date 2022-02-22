@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.headless_cms_demo">
+    package="com.harol.mldemo">
    <application
-        android:label="headless_cms_demo"
+        android:label="mldemo"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:headless_cms_demo/navigation/app_router.gr.dart';
+import 'package:mldemo/navigation/app_router.gr.dart';
 
 void main() {
   runApp(

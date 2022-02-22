@@ -1,5 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:headless_cms_demo/data/models/contentful_post_response.dart';
+import 'package:mldemo/data/models/contentful_post_response.dart';
 
 part 'contentful_state.freezed.dart';
 
