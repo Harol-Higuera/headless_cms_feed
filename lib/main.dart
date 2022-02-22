@@ -4,20 +4,20 @@ import 'package:headless_cms_demo/navigation/app_router.gr.dart';
 
 void main() {
   runApp(
-    const ProviderScope(
+    ProviderScope(
       child: MyApp(),
     ),
   );
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  final _appRouter = AppRouter();
+
+  MyApp({Key? key}) : super(key: key);
 
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    final _appRouter = AppRouter();
-
     return MaterialApp.router(
       title: 'Flutter Demo',
       theme: ThemeData(

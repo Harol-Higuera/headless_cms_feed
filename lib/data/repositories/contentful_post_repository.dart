@@ -15,9 +15,20 @@ class ContentfulPostRepository {
         'content_type': contentType,
         'limit': '10',
       }, ContentfulPostResponse.fromJson);
+      getImgUrl();
       return ApiResult(collection.items);
     } on Exception catch (error) {
       return ApiResult.errorMessage(error.toString());
+    }
+  }
+
+  Future getImgUrl() async {
+    try {
+      final collection = await contentful.getEntry('6o7pTztePoPPsmgIhtvwdC',
+          (data) => {print('Harol...X  ${data.toString()}')},
+          params: {});
+    } on Exception catch (error) {
+      print('Harol...X  ${error.toString()}');
     }
   }
 }

@@ -9,6 +9,7 @@ part of 'contentful_post_response.dart';
 _$_ContentfulPostResponse _$$_ContentfulPostResponseFromJson(
         Map<String, dynamic> json) =>
     _$_ContentfulPostResponse(
+      sys: SystemFields.fromJson(json['sys'] as Map<String, dynamic>),
       fields: ContentfulPostResponseField.fromJson(
           json['fields'] as Map<String, dynamic>),
     );
@@ -16,6 +17,7 @@ _$_ContentfulPostResponse _$$_ContentfulPostResponseFromJson(
 Map<String, dynamic> _$$_ContentfulPostResponseToJson(
         _$_ContentfulPostResponse instance) =>
     <String, dynamic>{
+      'sys': instance.sys,
       'fields': instance.fields,
     };
 

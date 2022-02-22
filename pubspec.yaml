@@ -36,7 +36,7 @@ dependencies:
   cupertino_icons: ^1.0.2
 
   # Auto Routing
-  auto_route: ^3.2.2
+  auto_route: ^3.2.4
 
   # contentful
   contentful: ^3.0.5

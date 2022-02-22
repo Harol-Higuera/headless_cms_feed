@@ -1,3 +1,4 @@
+import 'package:contentful/contentful.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'contentful_post_response.freezed.dart';
@@ -9,6 +10,7 @@ class ContentfulPostResponse with _$ContentfulPostResponse {
   const ContentfulPostResponse._();
 
   const factory ContentfulPostResponse({
+    required SystemFields sys,
     required ContentfulPostResponseField fields,
   }) = _ContentfulPostResponse;
 

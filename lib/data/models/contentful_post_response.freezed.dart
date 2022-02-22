@@ -23,8 +23,11 @@ ContentfulPostResponse _$ContentfulPostResponseFromJson(
 class _$ContentfulPostResponseTearOff {
   const _$ContentfulPostResponseTearOff();
 
-  _ContentfulPostResponse call({required ContentfulPostResponseField fields}) {
+  _ContentfulPostResponse call(
+      {required SystemFields sys,
+      required ContentfulPostResponseField fields}) {
     return _ContentfulPostResponse(
+      sys: sys,
       fields: fields,
     );
   }
@@ -39,6 +42,7 @@ const $ContentfulPostResponse = _$ContentfulPostResponseTearOff();
 
 /// @nodoc
 mixin _$ContentfulPostResponse {
+  SystemFields get sys => throw _privateConstructorUsedError;
   ContentfulPostResponseField get fields => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -52,7 +56,7 @@ abstract class $ContentfulPostResponseCopyWith<$Res> {
   factory $ContentfulPostResponseCopyWith(ContentfulPostResponse value,
           $Res Function(ContentfulPostResponse) then) =
       _$ContentfulPostResponseCopyWithImpl<$Res>;
-  $Res call({ContentfulPostResponseField fields});
+  $Res call({SystemFields sys, ContentfulPostResponseField fields});
 
   $ContentfulPostResponseFieldCopyWith<$Res> get fields;
 }
@@ -68,9 +72,14 @@ class _$ContentfulPostResponseCopyWithImpl<$Res>
 
   @override
   $Res call({
+    Object? sys = freezed,
     Object? fields = freezed,
   }) {
     return _then(_value.copyWith(
+      sys: sys == freezed
+          ? _value.sys
+          : sys // ignore: cast_nullable_to_non_nullable
+              as SystemFields,
       fields: fields == freezed
           ? _value.fields
           : fields // ignore: cast_nullable_to_non_nullable
@@ -93,7 +102,7 @@ abstract class _$ContentfulPostResponseCopyWith<$Res>
           $Res Function(_ContentfulPostResponse) then) =
       __$ContentfulPostResponseCopyWithImpl<$Res>;
   @override
-  $Res call({ContentfulPostResponseField fields});
+  $Res call({SystemFields sys, ContentfulPostResponseField fields});
 
   @override
   $ContentfulPostResponseFieldCopyWith<$Res> get fields;
@@ -112,9 +121,14 @@ class __$ContentfulPostResponseCopyWithImpl<$Res>
 
   @override
   $Res call({
+    Object? sys = freezed,
     Object? fields = freezed,
   }) {
     return _then(_ContentfulPostResponse(
+      sys: sys == freezed
+          ? _value.sys
+          : sys // ignore: cast_nullable_to_non_nullable
+              as SystemFields,
       fields: fields == freezed
           ? _value.fields
           : fields // ignore: cast_nullable_to_non_nullable
@@ -126,17 +140,20 @@ class __$ContentfulPostResponseCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_ContentfulPostResponse extends _ContentfulPostResponse {
-  const _$_ContentfulPostResponse({required this.fields}) : super._();
+  const _$_ContentfulPostResponse({required this.sys, required this.fields})
+      : super._();
 
   factory _$_ContentfulPostResponse.fromJson(Map<String, dynamic> json) =>
       _$$_ContentfulPostResponseFromJson(json);
 
   @override
+  final SystemFields sys;
+  @override
   final ContentfulPostResponseField fields;
 
   @override
   String toString() {
-    return 'ContentfulPostResponse(fields: $fields)';
+    return 'ContentfulPostResponse(sys: $sys, fields: $fields)';
   }
 
   @override
@@ -144,12 +161,15 @@ class _$_ContentfulPostResponse extends _ContentfulPostResponse {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _ContentfulPostResponse &&
+            const DeepCollectionEquality().equals(other.sys, sys) &&
             const DeepCollectionEquality().equals(other.fields, fields));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(fields));
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(sys),
+      const DeepCollectionEquality().hash(fields));
 
   @JsonKey(ignore: true)
   @override
@@ -165,13 +185,15 @@ class _$_ContentfulPostResponse extends _ContentfulPostResponse {
 
 abstract class _ContentfulPostResponse extends ContentfulPostResponse {
   const factory _ContentfulPostResponse(
-          {required ContentfulPostResponseField fields}) =
-      _$_ContentfulPostResponse;
+      {required SystemFields sys,
+      required ContentfulPostResponseField fields}) = _$_ContentfulPostResponse;
   const _ContentfulPostResponse._() : super._();
 
   factory _ContentfulPostResponse.fromJson(Map<String, dynamic> json) =
       _$_ContentfulPostResponse.fromJson;
 
+  @override
+  SystemFields get sys;
   @override
   ContentfulPostResponseField get fields;
   @override
