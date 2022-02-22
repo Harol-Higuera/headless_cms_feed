@@ -1,4 +1,6 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:headless_cms_demo/navigation/app_router.gr.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -12,7 +14,11 @@ class HomeScreen extends StatelessWidget {
       body: ListView(
         padding: const EdgeInsets.all(8),
         children: <Widget>[
-          _buildWidget(text: 'Contentful', onClicked: () {}),
+          _buildWidget(
+              text: 'Contentful',
+              onClicked: () {
+                AutoRouter.of(context).push(const ContentFulScreen());
+              }),
           const Divider(),
           _buildWidget(text: 'Firebaseログイン', onClicked: () {}),
         ],
